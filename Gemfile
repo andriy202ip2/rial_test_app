@@ -62,3 +62,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-sass', '>= 2.3.2.0'
+
+#gem 'rspec'
+
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
+gem 'bcrypt-ruby', '>= 3.1.2'
