@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<% provide(:title, @user.name) %>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
+</p>
+
+<p>
+	<%= gravatar_for @user %>
 </p>
 
 <p>
