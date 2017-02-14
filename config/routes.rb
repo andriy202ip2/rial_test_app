@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   resources :tests
   resources :microposts, only: [:create, :destroy]
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
       root  'static_pages#home'
       match '/signup',  to: 'users#new',            via: 'get'
 
@@ -24,6 +28,7 @@ Rails.application.routes.draw do
    match '/signout', to: 'sessions#destroy',     via: 'delete'
    #get "sessions/create"
 
+  resources :relationships, only: [:create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
